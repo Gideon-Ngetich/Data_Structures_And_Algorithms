@@ -5,5 +5,4 @@ After the login info has been captures, they are saves on a txt file the sent th
 Currently this application works on Windows only but i'll later develop it to run on Linux and Mac OS.
 
 
-------------------------FOR EDUCATION PURPOSES ONLY.-----------------------------------
--------------I DO NOT INTEND TO STEAL CONFIDENTIAL INFOMATION FROM ANYONE.-------------
+------------------------FOR EDUCATION PURPOSES ONLY. I DO NOT INTEND TO STEAL CONFIDENTIAL INFOMATION FROM ANYONE.-------------

